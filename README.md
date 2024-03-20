@@ -26,5 +26,5 @@ Estas son las librearías utilizadas en el proyecto:
 ***
 - Es necesario crear la base de datos DemoAPIDB y posteriormente ejecutar el script "scriptDB.txt" que se encuentra en la raiz del proyecto
 - Configurar el archivo APIDemo.Api/appsettings.json para apuntar a la base de datos creada.
-- Es necesario tener instalado Docker desktop y abrirlo para que se puedan crear los contenedores
+- Es necesario tener instalado Docker desktop y abrirlo para que se pueda crear el contenedor y la imagen
 
