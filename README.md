@@ -27,11 +27,3 @@ Estas son las librearías utilizadas en el proyecto:
 - Configurar el archivo APIDemo.Api/appsettings.json para apuntar a la base de datos creada.
 - Es necesario tener instalado Docker desktop y abrirlo para que se puedan crear los contenedores
 
-* Second Point
-* Third point
-3. **Third question in bold**
-Answer of the third question with *italic words*.
-4. **Fourth question in bold**
-| Headline 1 in the tablehead | Headline 2 in the tablehead | Headline 3 in the tablehead |
-|:--------------|:-------------:|--------------:|
-| text-align left | text-align center | text-align right |
