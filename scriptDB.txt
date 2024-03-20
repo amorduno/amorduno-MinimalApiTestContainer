@@ -1,0 +1,91 @@
+USE [DemoAPIDB]
+GO
+/****** Object:  Table [dbo].[Persona]    Script Date: 20/03/2024 12:21:22 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Persona](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [nvarchar](50) NOT NULL,
+	[Apellido] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Persona_Eliminar]    Script Date: 20/03/2024 12:21:23 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Persona_Eliminar]
+	@Id int 
+AS
+
+BEGIN
+	DELETE
+	FROM dbo.Persona
+	WHERE Id = @Id
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Persona_Insertar]    Script Date: 20/03/2024 12:21:23 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Persona_Insertar]
+	@Nombre nvarchar(50),
+	@Apellido nvarchar(50)
+AS
+
+BEGIN
+	INSERT INTO dbo.Persona (Nombre, Apellido)
+	VALUES (@Nombre, @Apellido)
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Persona_Modificar]    Script Date: 20/03/2024 12:21:23 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Persona_Modificar]
+	@Id int,
+	@Nombre nvarchar(50),
+	@Apellido nvarchar(50)
+AS
+
+BEGIN
+	UPDATE dbo.Persona SET Nombre = @Nombre, Apellido = @Apellido
+	WHERE Id = @Id
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Persona_ObtenerPorID]    Script Date: 20/03/2024 12:21:23 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Persona_ObtenerPorID]
+	@Id int 
+AS
+
+BEGIN
+	SELECT Id, Nombre, Apellido 
+	FROM dbo.Persona
+	WHERE Id = @Id
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Personas_Obtener]    Script Date: 20/03/2024 12:21:23 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Personas_Obtener]
+
+AS
+
+BEGIN
+	SELECT Id, Nombre, Apellido FROM dbo.Persona
+END
+GO
