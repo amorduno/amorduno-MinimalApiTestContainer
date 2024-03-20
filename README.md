@@ -17,6 +17,7 @@ Estas son las librearías utilizadas en el proyecto:
 * [Microsoft.AspNetCore.Mvc.Testing]: Version 6.0.28
 * [NUnit]: Version 4.1.0
 * [xunit]: Version 2.4.1
+* SQL Server
 * Docker
 * Postman
 
